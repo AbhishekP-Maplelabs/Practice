@@ -6,16 +6,15 @@ def palindrome(WORD):
     """
     To find wheather the entered word is a palindrome or not
     """
-    for i in range(0,len(WORD)):
-        if WORD[i]==WORD[len(WORD)-1]:
-            return 1
-        else:
-            return 0
+    reverse= ''.join(reversed(WORD))
+    if reverse==WORD:
+        return True
+    else:
+        return False
 try:
     word=input("Enter the word or number: ")
-    INPUT=list(word)
-    RESULT=palindrome(INPUT)
-    if RESULT==1:
+    RESULT=palindrome(word)
+    if RESULT:
         print("It is a palindrome")
     else:
         print("It is not a palindrome")
